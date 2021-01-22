@@ -1,0 +1,11 @@
+namePrefix: prod-
+commonLabels:
+  variant: prod
+  org: verint
+commonAnnotations:
+  note: Hello, I am prod!
+namespace: prod
+bases:
+- ../../base
+patchesStrategicMerge:
+- increase_replicas.yaml
