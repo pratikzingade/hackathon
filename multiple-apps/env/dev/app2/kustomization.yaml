@@ -1,0 +1,11 @@
+namePrefix: dev-
+commonLabels:
+  variant: dev
+  org: verint
+commonAnnotations:
+  note: dev-nginx
+namespace: dev
+bases:
+- ../../../base/app2
+patchesStrategicMerge:
+- configMap.yaml

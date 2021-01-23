@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: map
+data:
+  altGreeting: "This is dev env greeting!"
+  enableRisky: "true"

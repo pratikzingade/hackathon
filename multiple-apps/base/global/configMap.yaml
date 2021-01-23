@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: globalmap
+data:
+  java_path: "/var/etc/java"
+  allow_metrics: "true"

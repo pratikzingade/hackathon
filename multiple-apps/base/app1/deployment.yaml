@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment: hello
+  template:
+    metadata:
+      labels:
+        deployment: hello
+    spec:
+      containers:
+      - name: container
+        image: monopole/hello:1
+        command: ["/hello",
+                  "--port=8080",
+                  "--enableRiskyFeature=$(ENABLE_RISKY)"]
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ALT_GREETING
+          valueFrom:
+            configMapKeyRef:
+              name: map
+              key: altGreeting
+        - name: ENABLE_RISKY
+          valueFrom:
+            configMapKeyRef:
+              name: map
+              key: enableRisky
+        - name: JAVA_HOME
+          valueFrom:
+            configMapKeyRef:
+              name: globalmap
+              key: java_path

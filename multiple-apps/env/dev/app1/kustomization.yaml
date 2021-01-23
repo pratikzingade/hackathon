@@ -1,0 +1,11 @@
+namePrefix: dev-
+commonLabels:
+  variant: dev
+  org: verint
+commonAnnotations:
+  note: Hello, I am dev!
+namespace: dev
+bases:
+- ../../../base/app1
+patchesStrategicMerge:
+- map.yaml

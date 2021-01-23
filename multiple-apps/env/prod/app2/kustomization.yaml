@@ -3,9 +3,12 @@ commonLabels:
   variant: prod
   org: verint
 commonAnnotations:
-  note: Hello, I am prod!
+  note: prod-nginx
 namespace: prod
 bases:
-- ../../base
+- ../../../base/app2
 patchesStrategicMerge:
-- increase_replicas.yaml
+- configMap.yaml
+# images:
+# - name: nginx
+#   newTag: "1.19"
