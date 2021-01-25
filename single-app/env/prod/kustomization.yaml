@@ -9,6 +9,6 @@ bases:
 - ../../base
 patchesStrategicMerge:
 - increase_replicas.yaml
-images:
-- name: monopole/hello
-  newTag: 2  
+# images:
+# - name: monopole/hello
+#   newTag: "2"  
